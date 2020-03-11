@@ -1,0 +1,45 @@
+﻿@model _036_MoviesMvcWissen.Models.ViewModels.ReportsMoviesViewModel
+
+@{
+    ViewBag.Title = "Movie Report";
+    
+    var ajaxOptions = new AjaxOptions()
+    {
+        AllowCache = false,
+        Url = Url.Action("MoviesAjax", "Reports"),
+        HttpMethod = "GET",
+        UpdateTargetId = "divMovies",
+        InsertionMode = InsertionMode.Replace
+    };
+}
+
+<h2>Movie Report</h2>
+
+<div id="divMovies" style="width: 100%; overflow-x: auto;">
+    @Html.Partial("_Movies", Model)
+</div>
+
+@using (Ajax.BeginForm(null, null, ajaxOptions, new { id = "fMovies" }))
+{
+    <div class="row">
+        <div class="col-lg-10 col-8">
+
+        </div>
+        <div class="col-lg-2 col-4">
+            @Html.DropDownList("PageNumber", Model.PageNumbers, new { @class = "form-control ddlPageNumber" })
+        </div>
+    </div>
+}
+
+<script>
+    $(document).ready(function () {
+        $(".ddlPageNumber").change(function () {
+            $("#fMovies").submit();
+        });
+    });
+</script>
+
+@section ajaxScript
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

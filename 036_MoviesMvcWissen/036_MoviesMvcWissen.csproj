@@ -1,0 +1,746 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97B0504B-89D1-40FE-A147-F86BCDB5FF52}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_036_MoviesMvcWissen</RootNamespace>
+    <AssemblyName>036_MoviesMvcWissen</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.6.0\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.Mvc5.8.6.0\lib\net45\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.ValidatorAttribute, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.ValidatorAttribute.8.6.0\lib\net45\FluentValidation.ValidatorAttribute.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="DemosPeople.html" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Plugins\bootstrap-datepicker-master\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker3.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\js\bootstrap-datepicker.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\js\bootstrap-datepicker.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.bm.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.tk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\requirements.txt" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\screenshots.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\assets\common.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\assets\common.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\demo_head.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\markup_component.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\markup_daterange.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\markup_inline.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\markup_input.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_calendarweeks.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_clearbtn.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_daysofweekdisabled.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_enddate.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_language.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_multidate.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_showweekdays.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_startdate.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_todaybtn.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_todayhighlight.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_screenshots\option_weekstart.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\demo_head.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\markup_component.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\markup_daterange.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\markup_inline.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\markup_input.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_calendarweeks.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_clearbtn.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_daysofweekdisabled.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_enddate.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_language.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_multidate.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_showweekdays.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_startdate.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_todaybtn.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_todayhighlight.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\_static\screenshots\option_weekstart.png" />
+    <Content Include="Plugins\bootstrap-datepicker-master\Gruntfile.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\bootstrap-datepicker.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker-en-CA.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ar-tn.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.bm.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.bn.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.br.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.bs.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-AU.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-CA.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-GB.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-IE.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-NZ.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-US.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.en-ZA.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.eo.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.eu.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.fo.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.fr-CH.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.hi.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.hy.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.it-CH.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.kh.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.km.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ko.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.me.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.mn.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.mr.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.oc.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.si.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sr-latin.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sr.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.ta.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.tg.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.tk.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.uk.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.uz-cyrl.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.uz-latn.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\assets\coverage.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\assets\mock.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\assets\qunit-logging.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\assets\qunit.css" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\assets\qunit.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\assets\utils.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\calendar-weeks.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\component.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\data-api.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\events.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\formats.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\inline.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\keyboard_navigation\2011.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\keyboard_navigation\2012.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\keyboard_navigation\all.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\methods.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\methods_jquery.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\mouse_navigation\2011.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\mouse_navigation\2012.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\mouse_navigation\all.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\noconflict.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\options.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\timezone.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\suites\touch_navigation\all.js" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\tests.html" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\timezone.html" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Plugins\bootstrap-datepicker-master\.editorconfig" />
+    <Content Include="Plugins\bootstrap-datepicker-master\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\.gitignore" />
+    <Content Include="Plugins\bootstrap-datepicker-master\.travis.yml" />
+    <Content Include="Plugins\bootstrap-datepicker-master\bower.json" />
+    <Content Include="Plugins\bootstrap-datepicker-master\build\build.less" />
+    <Content Include="Plugins\bootstrap-datepicker-master\build\build3.less" />
+    <Content Include="Plugins\bootstrap-datepicker-master\build\build_standalone.less" />
+    <Content Include="Plugins\bootstrap-datepicker-master\build\build_standalone3.less" />
+    <Content Include="Plugins\bootstrap-datepicker-master\CHANGELOG.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\CODE_OF_CONDUCT.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\composer.json" />
+    <Content Include="Plugins\bootstrap-datepicker-master\CONTRIBUTING.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker-master\dist\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\conf.py" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\events.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\i18n.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\index.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\keyboard.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\make.bat" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\Makefile" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\markup.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\methods.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\options.rst" />
+    <Content Include="Plugins\bootstrap-datepicker-master\docs\README.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\grunt\.jshintrc" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\.jscsrc" />
+    <Content Include="Plugins\bootstrap-datepicker-master\js\.jshintrc" />
+    <Content Include="Plugins\bootstrap-datepicker-master\less\.csslintrc" />
+    <Content Include="Plugins\bootstrap-datepicker-master\less\datepicker.less" />
+    <Content Include="Plugins\bootstrap-datepicker-master\less\datepicker3.less" />
+    <Content Include="Plugins\bootstrap-datepicker-master\LICENSE" />
+    <Content Include="Plugins\bootstrap-datepicker-master\package.json" />
+    <Content Include="Plugins\bootstrap-datepicker-master\README.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\tests\README.md" />
+    <Content Include="Plugins\bootstrap-datepicker-master\yarn.lock" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Shared\DisplayTemplates\Movie.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Contexts\MoviesContext.cs" />
+    <Compile Include="Controllers\DemosController.cs" />
+    <Compile Include="Controllers\DirectorsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogIoCcontainerController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ReportsController.cs" />
+    <Compile Include="Controllers\ReviewsController.cs" />
+    <Compile Include="Entities\Director.cs" />
+    <Compile Include="Entities\Movie.cs" />
+    <Compile Include="Entities\MovieDirector.cs" />
+    <Compile Include="Entities\Review.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\vwUser.cs" />
+    <Compile Include="Enums\RoleEnum.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ButtonHtmlHelpers.cs" />
+    <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Migrations\202002050959369_MoviesV01.cs" />
+    <Compile Include="Migrations\202002050959369_MoviesV01.designer.cs">
+      <DependentUpon>202002050959369_MoviesV01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002141352256_MoviesV02.cs" />
+    <Compile Include="Migrations\202002141352256_MoviesV02.designer.cs">
+      <DependentUpon>202002141352256_MoviesV02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002141401096_MoviesV03.cs" />
+    <Compile Include="Migrations\202002141401096_MoviesV03.designer.cs">
+      <DependentUpon>202002141401096_MoviesV03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002181256486_MoviesV04.cs" />
+    <Compile Include="Migrations\202002181256486_MoviesV04.designer.cs">
+      <DependentUpon>202002181256486_MoviesV04.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002181334435_MoviesV05.cs" />
+    <Compile Include="Migrations\202002181334435_MoviesV05.designer.cs">
+      <DependentUpon>202002181334435_MoviesV05.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002181435270_MoviesV06.cs" />
+    <Compile Include="Migrations\202002181435270_MoviesV06.designer.cs">
+      <DependentUpon>202002181435270_MoviesV06.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002181717290_MoviesV07.cs" />
+    <Compile Include="Migrations\202002181717290_MoviesV07.designer.cs">
+      <DependentUpon>202002181717290_MoviesV07.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201657048_MoviesV08.cs" />
+    <Compile Include="Migrations\202002201657048_MoviesV08.designer.cs">
+      <DependentUpon>202002201657048_MoviesV08.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Demos\Templates\PersonModel.cs" />
+    <Compile Include="Models\Demos\Ajax\PersonModelClientModel.cs" />
+    <Compile Include="Models\DirectorModel.cs" />
+    <Compile Include="Models\LogDemo\ILogger.cs" />
+    <Compile Include="Models\LogDemo\Loggers.cs" />
+    <Compile Include="Models\MovieReportModel.cs" />
+    <Compile Include="Models\ViewModels\DemosGetPeopleAjaxViewModel.cs" />
+    <Compile Include="Models\ViewModels\DirectorsEditViewModel.cs" />
+    <Compile Include="Models\ViewModels\DirectorsIndexViewModel.cs" />
+    <Compile Include="Models\ViewModels\MoviesIndexViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportsMoviesViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validations\FluentValidation\DirectorValidator.cs" />
+    <Compile Include="Validations\FluentValidation\UserValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\Add.cshtml" />
+    <Content Include="Views\Demos\Razor1.cshtml" />
+    <Content Include="Views\Demos\Razor2.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\_Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Shared\_Welcome.cshtml" />
+    <Content Include="Views\Directors\Create.cshtml" />
+    <Content Include="Views\Directors\Delete.cshtml" />
+    <Content Include="Views\Directors\Details.cshtml" />
+    <Content Include="Views\Directors\Edit.cshtml" />
+    <Content Include="Views\Directors\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
+    <Content Include="Views\Directors\EditNew.cshtml" />
+    <Content Include="Views\Demos\GetPeople.cshtml" />
+    <Content Include="Views\Demos\GetPersonDetails.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
+    <Content Include="Views\Demos\AddPerson.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\PersonModel.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Reviews\Create.cshtml" />
+    <Content Include="Views\Reviews\Delete.cshtml" />
+    <Content Include="Views\Reviews\Details.cshtml" />
+    <Content Include="Views\Reviews\Edit.cshtml" />
+    <Content Include="Views\Reviews\Index.cshtml" />
+    <Content Include="Views\Demos\DivideByZero.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Demos\GetPeopleAjax.cshtml" />
+    <Content Include="Views\Demos\_PeopleList.cshtml" />
+    <Content Include="Views\Reports\Movies.cshtml" />
+    <Content Include="Views\Reports\_Movies.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Files\Movies\" />
+    <Folder Include="Views\LogDemo\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002050959369_MoviesV01.resx">
+      <DependentUpon>202002050959369_MoviesV01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141352256_MoviesV02.resx">
+      <DependentUpon>202002141352256_MoviesV02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002141401096_MoviesV03.resx">
+      <DependentUpon>202002141401096_MoviesV03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002181256486_MoviesV04.resx">
+      <DependentUpon>202002181256486_MoviesV04.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002181334435_MoviesV05.resx">
+      <DependentUpon>202002181334435_MoviesV05.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002181435270_MoviesV06.resx">
+      <DependentUpon>202002181435270_MoviesV06.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002181717290_MoviesV07.resx">
+      <DependentUpon>202002181717290_MoviesV07.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201657048_MoviesV08.resx">
+      <DependentUpon>202002201657048_MoviesV08.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49988</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49988/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

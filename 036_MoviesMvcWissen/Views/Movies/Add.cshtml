@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Add Movie";
+    var directors = (MultiSelectList)ViewData["directors"];
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p style="color: #0000ff;">
+    @ViewBag.Message
+</p>
+
+<form action="~/Movies/Add" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="tbName">Name</label>
+        <input type="text" class="form-control" id="tbName" name="Name" />
+    </div>
+    <div class="form-group">
+        <label for="ddlProductionYear">Production Year</label>
+        <select id="ddlProductionYear" name="ProductionYear" class="form-control">
+            @*<option value="2020" selected>2020</option>
+            <option value="2019">2019</option>*@
+            @for (int i = DateTime.Now.Year; i >= 1950; i--)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="tbBoxOfficeReturn">Box Office Return</label>
+        <input type="text" class="form-control" id="tbBoxOfficeReturn" name="BoxOfficeReturn" />
+    </div>
+
+    <div class="form-group">
+        <label for="ddlDirectors">Directors</label>
+        <select id="ddlDirectors" class="form-control" name="Directors" multiple>
+            @foreach (var director in directors)
+            {
+                <option value="@director.Value">@director.Text</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="fuImage">Image</label>
+        <br />
+        <input type="file" name="Image" accept="image/*" id="fuImage" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    &nbsp;
+    <button type="reset" class="btn btn-info">Clear</button>
+</form>
